@@ -7,7 +7,7 @@ TELEGRAM_TOKEN = os.environ.get("TELEGRAM_TOKEN")
 CHAT_ID        = os.environ.get("CHAT_ID")
 SPIKE_PERCENT  = 5.0
 CHECK_INTERVAL = 60
-WINDOW_MINUTES = 1
+WINDOW_MINUTES = 10
 
 price_history = {}
 
