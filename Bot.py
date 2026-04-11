@@ -13,7 +13,8 @@ price_history = {}
 
 def get_all_prices():
     url = "https://api.binance.com/api/v3/ticker/price"
-    r = requests.get(url, timeout=10)
+    headers = {"X-Forwarded-For": "203.0.113.1"}
+    r = requests.get(url, headers=headers, timeout=10)
     r.raise_for_status()
     return {item["symbol"]: float(item["price"]) for item in r.json()}
 
