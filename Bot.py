@@ -39,11 +39,16 @@ def check_spikes():
     prices = get_all_prices()
 
     for symbol, current_price in prices.items():
+        if current_price == 0:
+            continue
         history = price_history.setdefault(symbol, [])
         history[:] = [(t, p) for t, p in history if t >= cutoff]
 
         if history:
             baseline_price = history[0][1]
+            if baseline_price == 0:
+                history.append((now, current_price))
+                continue
             pct_change = ((current_price - baseline_price) / baseline_price) * 100
 
             if abs(pct_change) >= SPIKE_PERCENT:
