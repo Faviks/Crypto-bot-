@@ -1,11 +1,11 @@
 import time
 import requests
+import os
 from datetime import datetime
 
-TELEGRAM_TOKEN = "8690560303:AAElB8DrwZEdP_mOILSNjaUQ2mSkZXMOmgw
-"
-CHAT_ID        = "6492819279"
-SPIKE_PERCENT  = 7.0
+TELEGRAM_TOKEN = os.environ.get("TELEGRAM_TOKEN")
+CHAT_ID        = os.environ.get("CHAT_ID")
+SPIKE_PERCENT  = 0.5
 CHECK_INTERVAL = 60
 WINDOW_MINUTES = 5
 
