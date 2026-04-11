@@ -12,7 +12,7 @@ WINDOW_MINUTES = 10
 price_history = {}
 
 def get_all_prices():
-    url = "https://api.binance.com/api/v3/ticker/price"
+    url = "https://fapi.binance.com/fapi/v1/ticker/price"
     headers = {"X-Forwarded-For": "203.0.113.1"}
     r = requests.get(url, headers=headers, timeout=10)
     r.raise_for_status()
